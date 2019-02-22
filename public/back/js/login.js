@@ -1,3 +1,6 @@
+
+$(function() {
+
 $('#form').bootstrapValidator({
     // //设置小图标
     feedbackIcons: {
@@ -21,6 +24,9 @@ $('#form').bootstrapValidator({
                     min: 2,
                     max: 6,
                     message: "用户名长度必须是 2-6 位"
+                },
+                callback: {
+                    message:'用户名不存在'
                 }
             }
         },
@@ -33,6 +39,9 @@ $('#form').bootstrapValidator({
                     min: 6,
                     max: 12,
                     message: "密码长度必须是 6-12 位"
+                },
+                callback: {
+                    message:'密码错误'
                 }
             }
         }
@@ -56,15 +65,25 @@ $("#form").on('success.form.bv', function (e) {
             // console.log(data);
 
             if(data.error==1000) {
-                alert('用户名错误')
+                // alert('用户名错误')
+                $('#form').data("bootstrapValidator").updateStatus("username", "INVALID", "callback")
             }
             if(data.error==1001) {
-                alert('密码错误')
+                // alert('密码错误')
+                $('#form').data("bootstrapValidator").updateStatus("password", "INVALID", "callback")
             }
             if(data.success) {
                 location.href='index.html';
-            }
-            
+            }           
         }
     });
 });
+
+// 点击重置按钮时，还需要重置表单的错误提示信息。
+$("[type='reset']").on("click", function(){
+  
+    //重置表单样式
+    $("form").data("bootstrapValidator").resetForm();
+    
+  });
+})
