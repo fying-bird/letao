@@ -6,17 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/js/bootstrapValidator.min.js">
     <link rel="stylesheet" href="./css/common.css">
     <title>Document</title>
 </head>
 
 <body class="dl_bd">
 
-   
-    
+    <!-- 登录页面 -->
+    <div class="container">
+        <!-- 组件 带标题的面板 -->
+        <div class="panel panel-default col-lg-4 col-lg-offset-4 mt_200">
+            <div class="panel-heading">后台管理系统</div>
+            <div class="panel-body">
+                <form class="form-horizontal" id="form">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-3 control-label">用户名：</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-3 control-label">密　码：</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-6">
+                            <button type="reset" class="btn btn-reset pull-left">重置</button>
+                            <button type="submit" class="btn btn-submit pull-right">登陆</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 
 </html>
