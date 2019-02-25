@@ -17,7 +17,7 @@
 
     <div class="left_column">
         <div class="darkhorse">
-           黑马35期
+            黑马35期
         </div>
         <div class="user">
             <img src="./images/default.png" alt="">
@@ -61,8 +61,50 @@
             <div class="following_content">
                 <ol class="breadcrumb">
                     <li><a href="#">管理系统</a></li>
-                    <li class="active">首页</li>
+                    <li class="active">分类管理</li>
+                    <li class="active">一级分类</li>
                 </ol>
+            </div>
+
+            <div class="main_content">
+                <!-- 添加分类按钮 -->
+                <button class="btn btn-default mb_20" id="add">添加分类</button>
+
+                <!-- 表格 -->
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%">序号</th>
+                            <th style="width: 80%">一级分类名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 模板引擎的坑 -->
+                    </tbody>
+                </table>
+
+
+                <!-- 分页插件 -->
+                <div class="text-right">
+
+                    <ul class="pagination" id="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -73,11 +115,11 @@
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
                     <h4 class="modal-title">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                    <p><i class="glyphicon glyphicon-info-sign"></i>   您确定要退出后台管理系统吗？</p>
+                    <p><i class="glyphicon glyphicon-info-sign"></i> 您确定要退出后台管理系统吗？</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -86,12 +128,48 @@
             </div>
         </div>
     </div>
+
+    <!-- 添加分类的模态框 -->
+    <div class="modal fade" tabindex="-1" id="addModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">添加分类</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" placeholder="请输入一级分类" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="addBtn">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模板引擎  -->
+    <script type="text/html" id="firstTpl">
+        {{ each rows v i }}
+            <tr>
+                <td style="width: 20%">{{ i+1+(page-1)*size }}</td>
+                <td style="width: 80%">{{ v.categoryName }}</td>
+            </tr>
+        {{ /each }}
+    </script>
+
+
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
+    <!-- 引模板引擎的包 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 引分页插件的包 -->
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/isLogin.js"></script>
+    <script src="./js/first.js"></script>
 </body>
 
 </html>

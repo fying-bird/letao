@@ -18,6 +18,9 @@ a:active {
 .mt_200 {
     margin-top: 200px;
 }
+.mb_20 {
+    margin-bottom: 20px;
+}
 .panel {
     
     background-color: #222d32;
@@ -179,4 +182,12 @@ h3 {
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     text-align: center;
     vertical-align: middle;
+}
+
+
+/* 一级分类  添加分类模态框的input框 */
+#addModal .modal-body input {
+    border-radius: 5px;
+    height: 34px;
+    padding-left: 10px;
 }

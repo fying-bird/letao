@@ -28,6 +28,7 @@ $(function () {
                 var htmlstr = template('userTemp', data);
                 $('tbody').html(htmlstr);
 
+                  // 分页插件
                 $('#pagination').bootstrapPaginator({
 
                     bootstrapMajorVersion: 3,
