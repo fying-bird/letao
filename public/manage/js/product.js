@@ -21,7 +21,7 @@ $(function() {
         pageSize: pageSize
       },
       success: function( info ) {
-        console.log(info);
+        // console.log(info);
         // 将模板与数据对象相结合, 渲染到页面中
         var htmlStr = template( "productTpl", info );
         $('.lt_content tbody').html( htmlStr );
@@ -59,7 +59,7 @@ $(function() {
         pageSize: 100
       },
       success: function( info ) {
-        console.log(info);
+        // console.log(info);
         var htmlStr = template( "dropdownTpl", info );
         $('.dropdown-menu').html( htmlStr );
 
@@ -93,12 +93,14 @@ $(function() {
     // 上传完图片, 响应的回调函数配置
     // 每一张图片上传, 都会响应一次
     done: function( e, data ) {
-      console.log( data );
+      // console.log( data );
       // 获取图片地址对象
       var picObj = data.result;
       // 获取图片地址
       var picAddr = picObj.picAddr;
-
+      
+      console.log(picArr);
+      
       // 新得到的图片对象, 应该推到数组的最前面    push pop shift unshift
       picArr.unshift( picObj );
       // 新的图片, 应该添加到 imgBox 最前面去
