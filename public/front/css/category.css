@@ -1,0 +1,55 @@
+.cat_left {
+    float: left;
+    width: 90px;
+    height: 100%;
+    position: relative;
+    /* background-color: #ccc; */
+}
+.cat_left ul li {
+    height: 50px;
+}
+.cat_left ul li a {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    display: block;
+    width: 90px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #666;
+    background-color: #E3E4E5;
+}
+.cat_left ul li a.current {
+    background-color: #fff;
+    border-right: none;
+    border-bottom: none;
+
+}
+
+/*  */
+.cat_right {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+.cat_right ul li {
+    float: left;
+    width:33.3%;
+}
+.cat_right ul li a {
+    display: block;
+}
+.cat_right ul li a img {
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    height: 50px;
+}
+.cat_right ul li a p {
+    text-align: center;
+}
+
+/* category二级分类没有内容提示的信息 */
+p.title {
+    margin: 20px;
+}
